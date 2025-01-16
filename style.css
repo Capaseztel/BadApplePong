@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1f1f1f;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    width: 100%;
+    max-height: 1000px;
+    overflow: hidden;
+}
+
+#video1 {
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    top: 0;
+}
+
+#video2 {
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    top: 0;
+    left: 50%;
+}
+
+#campo {
+    top: 0;
+    width: 100%;
+    max-height: 1000px;
+}
+
+.check-with-label {
+    display: none;
+    position: absolute;
+    top: 0;
+}
+
+.label-for-check {
+    position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    top: 5px;
+    left: 50%;
+    transform: translate(-15px);
+    background-color: white;
+}
+
+.label-for-check div {
+    height: 20px;
+    width: 20px;
+    background: url("volume-xmark-solid.svg") no-repeat;
+}
+
+.label-for-check div:hover {
+    cursor: pointer;
+}
+
+.check-with-label:checked + .label-for-check div {
+    background: url("volume-high-solid.svg") no-repeat;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+h1 {
+    text-align: center;
+    grid-column: 1/3;
+}
+
+.end {
+    justify-self: end;
+    text-align: end;
+}
