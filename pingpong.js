@@ -5,9 +5,7 @@ function principal() {
     video1.play();
     video2.play();
     setTimeout(function () {
-        if (hay_sonido == true) {
-            song.play();
-        }
+        song.play();
     }, 1500);
     bucle();
 }
@@ -19,6 +17,7 @@ function inicializa_parametros() {
     beep2 = new Audio("beep2.wav");
     lose = new Audio("hit.wav");
     song = new Audio("badapple8bits.mp3");
+    song.loop = true;
     video1 = document.getElementById("video1");
     video2 = document.getElementById("video2");
 
@@ -243,6 +242,11 @@ function dibuja_puntuacion() {
 function bucle() {
     hay_sonido = document.getElementById("sonido").checked;
     dibuja_campo();
+    if (hay_sonido) {
+        song.volume = 1;
+    } else {
+        song.volume = 0;
+    }
     calcula_coordenadas_pelota();
     controlar_pulsacion();
     dibuja_pelota(x, y);
